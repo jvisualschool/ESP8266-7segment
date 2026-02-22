@@ -194,6 +194,9 @@
     async function bb(l, h, dt) { for (let i = l; i <= h; ++i) { globalIntensity = i; drawMax(); await delay(dt); } }
     async function bd(h, l, dt) { for (let i = h; i >= l; --i) { globalIntensity = i; drawMax(); await delay(dt); } }
 
+    async function show_Info_Sequence() { clearState(); showOLED("DATE", "Today's Date", "2026. 02. 21"); setC(7, ' ', false); setD(6, 2, false); setD(5, 6, true); setD(4, 0, false); setD(3, 2, true); setD(2, 2, false); setD(1, 1, false); setC(0, ' ', false); await bb(1, 15, 25); await delay(1000); await bd(15, 1, 15); clearState(); showOLED("TIME", "Current Time", "11 : 09 AM"); setC(7, ' ', false); setD(6, 1, false); setD(5, 1, true); setD(4, 0, false); setD(3, 9, true); setD(2, 4, false); setD(1, 7, false); setC(0, ' ', false); await bb(1, 15, 25); await delay(1000); await bd(15, 1, 15); clearState(); showOLED("TEMP", "Temperature", "24.5 Celsius"); setC(7, ' ', false); setC(6, ' ', false); setD(5, 2, false); setD(4, 4, true); setD(3, 5, false); state[2] = 0x63; setC(1, 'C', false); setC(0, ' ', false); await bb(1, 15, 25); await delay(1000); await bd(15, 1, 15); }
+    async function anim_Countdown() { clearState(); for (let i = 0; i < 8; i++)state[i] = 0xFF; drawMax(); for (let ct = 8; ct >= 1; ct--) { showOLED("COUNTDOWN", "System Booting", "Time remaining: " + ct); if (ct < 8) state[7 - ct] = 0; drawMax(); await bb(1, 15, 15); await bd(15, 1, 15); } clearState(); showOLED("S T A R T !", "System is Ready", "Launch Sequence..."); state[7] = 0x5b; state[6] = 0x0f; state[5] = 0x5f; state[4] = 0x05; state[3] = 0x0f; for (let i = 0; i < 2; i++) { globalIntensity = 15; drawMax(); await delay(150); globalIntensity = 1; drawMax(); await delay(150); } globalIntensity = 8; await delay(1000); }
+
     async function anim_InitialBootBreathing() {
       clearState();
       for (let i = 0; i < 8; i++) state[i] = 0xFF; drawMax();

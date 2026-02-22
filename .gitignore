@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Arduino build artifacts
+build/
+*.elf
+*.bin
+*.hex
+*.map
+*.d
+
+# Environment / Secrets
+.env
+*.env
+secrets.*
+credentials.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
