@@ -10,7 +10,7 @@ I2C 기반 OLED는 각 애니메이션의 메타데이터(번호, 제목, 설명
 
 | 하드웨어 동작 | 웹 시뮬레이터 | 애니메이션 목록 |
 | :---: | :---: | :---: |
-| ![Hardware](screenshot1.png) | ![Simulator](screenshot2.png) | ![Playlist](screenshot3.png) |
+| ![Hardware](https://jvibeschool.org/ESP8266-7segment/screenshot1.png) | ![Simulator](https://jvibeschool.org/ESP8266-7segment/screenshot2.png) | ![Playlist](https://jvibeschool.org/ESP8266-7segment/screenshot3.png) |
 
 ---
 
